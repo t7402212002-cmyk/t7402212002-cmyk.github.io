@@ -61,6 +61,7 @@
 
 	.link-button {
 	  display: flex;
+	  flex-direction: column;
 	  align-items: center;
 	  justify-content: center;
 
@@ -80,7 +81,15 @@
 
 	  transition: 0.2s;
 	}
-
+	
+	.button-icon {
+	  width: 110px;
+	  height: 110px;
+	  object-fit: contain;
+	  margin-bottom: 14px;
+	  border-radius: 22px;
+	}
+	
 	.link-button:hover {
 	  transform: translateY(-4px) scale(1.03);
 	  background: rgba(255, 255, 255, 0.22);
@@ -114,10 +123,28 @@
        <div class="section">
       <div class="section-title">網站連結</div>
       <div class="button-grid">
-        <a class="link-button" href="https://drive.google.com" target="_blank">📁 Google Drive</a>
-        <a class="link-button" href="https://github.com" target="_blank">🐙 GitHub</a>
-        <a class="link-button" href="https://chat.openai.com" target="_blank">🤖 ChatGPT</a>
-		<a class="link-button" href="https://gemini.google.com/app" target="_blank">🤖 Gemini</a>
+	  
+	  <a class="link-button" href="https://drive.google.com" target="_blank">
+		  <img class="button-icon" src="./assets/icons/drive.png" alt="Google Drive">
+		  <span>Google Drive</span>
+		</a>
+        
+	  <a class="link-button" href="https://github.com" target="_blank">
+		  <img class="button-icon" src="./assets/icons/GitHub.png" alt="GitHub">
+		  <span>GitHub</span>
+		</a>
+		
+	  <a class="link-button" href="https://chat.openai.com" target="_blank">
+		  <img class="button-icon" src="./assets/icons/chatgpt.jpg" alt="ChatGPT">
+		  <span>ChatGPT</span>
+		</a>
+		
+	  <a class="link-button" href="https://chat.openai.com" target="_blank">
+		  <img class="button-icon" src="./assets/icons/Gemini.png" alt="Gemini">
+		  <span>Gemini</span>
+		</a>
+		
+		
 		<a class="link-button" href="https://claude.ai/new" target="_blank">🤖 claude</a>
 	
       </div>
