@@ -1,11 +1,133 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>blu740</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>公司工具入口</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    }
+
+    .section-title {
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      color: #fff;
+      text-align: center;
+      padding: 22px;
+      border-radius: 10px;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 22px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 62px;
+      padding: 12px 18px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #5fd278, #48a847);
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+      transition: 0.2s;
+    }
+
+    .link-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.25);
+      filter: brightness(1.08);
+    }
+
+    .note {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>我的網站上線了</h1>
-  <p>Hello GitHub Pages!</p>
+  <div class="page">
+    <h1>公司工具入口</h1>
+
+    <div class="section">
+      <div class="section-title">公司運作</div>
+      <div class="button-grid">
+        <a class="link-button" href="https://example.com" target="_blank">🍗 訂便當系統</a>
+        <a class="link-button" href="https://example.com" target="_blank">👤 Nueip HR系統</a>
+        <a class="link-button" href="https://example.com" target="_blank">📄 請假文件</a>
+        <a class="link-button" href="https://example.com" target="_blank">💰 報帳表單</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">RS前台連結</div>
+      <div class="button-grid">
+        <a class="link-button" href="https://example.com" target="_blank">Lab</a>
+        <a class="link-button" href="https://example.com" target="_blank">QA</a>
+        <a class="link-button" href="https://example.com" target="_blank">Release</a>
+        <a class="link-button" href="https://example.com" target="_blank">Live</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">RS後台連結</div>
+      <div class="button-grid">
+        <a class="link-button" href="https://example.com" target="_blank">Lab</a>
+        <a class="link-button" href="https://example.com" target="_blank">QA</a>
+        <a class="link-button" href="https://example.com" target="_blank">Release</a>
+        <a class="link-button" href="https://example.com" target="_blank">Live</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">文件 / 小工具</div>
+      <div class="button-grid">
+        <a class="link-button" href="https://docs.google.com" target="_blank">📚 Google 文件</a>
+        <a class="link-button" href="https://drive.google.com" target="_blank">📁 Google Drive</a>
+        <a class="link-button" href="https://github.com" target="_blank">🐙 GitHub</a>
+        <a class="link-button" href="https://chat.openai.com" target="_blank">🤖 ChatGPT</a>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
