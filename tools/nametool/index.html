@@ -1,0 +1,466 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>&#21629;&#21517;&#24037;&#20855; v1.0</title>
+    <link rel="stylesheet" href="./styles.css?v=20260702-final-folder1">
+  </head>
+  <body>
+    <main class="app-window">
+      <header class="titlebar">
+        <div class="brand-mark" aria-hidden="true">NT</div>
+        <h1>&#21629;&#21517;&#24037;&#20855; v1.0</h1>
+      </header>
+
+      <div class="top-actions" aria-label="actions">
+        <button class="icon-button" id="copyAllBtn" type="button" title="Copy all">CP</button>
+        <button class="icon-button" id="exportBtn" type="button" title="Export txt">TX</button>
+        <button class="icon-button danger" id="clearBtn" type="button" title="Clear">X</button>
+      </div>
+      <section class="spec-shell" aria-label="slot naming spec">
+        <section class="toolbar" aria-label="mode">
+          <div class="slot-tabs" data-active-mode="slot">
+            <div class="top-mode-row" role="group" aria-label="Spec mode">
+              <button class="slot-tab active" type="button" aria-selected="true" data-spec-mode="slot">Slot</button>
+              <button class="slot-tab" type="button" aria-selected="false" data-spec-mode="function">&#36229;&#36895;&#27169;&#24335;</button>
+            </div>
+            <div class="mode-tabs" role="group" aria-label="Slot category" data-nav-mode="slot">
+              <button class="preset active" type="button" data-filter-group="all">all</button>
+              <button class="preset" type="button" data-filter-group="main">&#20027;&#36938;&#25138;</button>
+              <button class="preset" type="button" data-filter-group="marquee">&#36305;&#39340;&#29128;</button>
+              <button class="preset" type="button" data-filter-group="intro">&#36681;&#22580;</button>
+              <button class="preset" type="button" data-filter-group="win">&#29518;&#38917;</button>
+              <button class="preset" type="button" data-filter-group="buyfeature">&#36092;&#36023;&#29305;&#33394;</button>
+              <button class="preset" type="button" data-filter-group="free">&#20813;&#36027;&#36938;&#25138;</button>
+              <button class="preset" type="button" data-filter-group="ui">UI</button>
+              <button class="preset" type="button" data-filter-group="online">&#19978;&#32218;&#30456;&#38364;</button>
+              <button class="preset" type="button" data-filter-group="backend">&#24460;&#21488;&#22294;</button>
+            </div>
+            <div class="mode-tabs" role="group" aria-label="Hyperspeed category" data-nav-mode="function">
+              <button class="preset active" type="button" data-filter-group="all">all</button>
+              <button class="preset" type="button" data-filter-group="hs_initial">&#21021;&#22987;&#30059;&#38754;</button>
+              <button class="preset" type="button" data-filter-group="hs_launch">&#21855;&#21205;&#38913;&#38754;</button>
+              <button class="preset" type="button" data-filter-group="hs_fg">FG&#35426;&#21839;&#35222;&#31383;</button>
+              <button class="preset" type="button" data-filter-group="hs_balance">&#39192;&#38989;&#19981;&#36275;</button>
+              <button class="preset" type="button" data-filter-group="hs_replay">&#22238;&#25918;&#38913;&#38754;</button>
+              <button class="preset" type="button" data-filter-group="hs_ui">UI &#38748;&#24907;&#20844;&#29256;</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="spec-panel" aria-label="naming spec">
+          <div class="section-head">
+            <h2>&#21629;&#21517;&#35215;&#26684;</h2>
+            <span>TCL-110XX static template</span>
+          </div>
+          <div class="spec-table" role="table" aria-label="spec table">
+          <div class="spec-row spec-head" role="row">
+            <span role="columnheader">&#27169;&#32068;</span>
+            <span role="columnheader">&#29289;&#20214;&#25551;&#36848;</span>
+            <span role="columnheader">&#20986;&#27284;&#36335;&#24465;</span>
+            <span role="columnheader">&#27284;&#26696;&#21517;&#31281;</span>
+            <span role="columnheader">&#20633;&#35387;</span>
+          </div>
+          <button class="spec-row spec-base active" type="button" data-preset="symbol_image" role="row">
+            <span role="cell">&#20027;&#36938;&#25138;</span>
+            <span role="cell">symbol &#21205;&#24907;&#27169;&#31946; / &#38748;&#24907;&#22294;</span>
+            <span role="cell">\assets\resources\basegame\image\symbol</span>
+            <span role="cell">&#21205;&#24907;&#20986;&#22294; or symbol_*.png</span>
+            <span role="cell">&#32005;&#33394; image&#65307;SCATTER / WILD &#25991;&#23383;&#38656;&#20013;&#33521;&#25991;&#29256;</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="symbol_multiplier" role="row">
+            <span role="cell">&#20027;&#36938;&#25138;</span>
+            <span role="cell">symbol &#20493;&#25976;_&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\basegame\font\multiplier</span>
+            <span role="cell">symbol_multiplier_nu_a_000~009.png<br>symbol_multiplier_nu_a_x.png<br>symbol_multiplier_nu_b_000~009.png<br>symbol_multiplier_nu_b_x.png</span>
+            <span role="cell">&#32043;&#33394; font&#65307;&#27284;&#21517;&#21547; nu</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="symbol_countdown" role="row">
+            <span role="cell">&#20027;&#36938;&#25138;</span>
+            <span role="cell">symbol &#20498;&#25976;_&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\basegame\font\symbol</span>
+            <span role="cell">symbol_nu_001.png<br>symbol_nu_002.png<br>symbol_nu_003.png</span>
+            <span role="cell">&#32043;&#33394; font&#65307;&#27284;&#21517;&#21547; nu</span>
+          </button>
+          <button class="spec-row spec-base" type="button" data-preset="base_bg" role="row">
+            <span role="cell">&#20027;&#36938;&#25138;</span>
+            <span role="cell">&#32972;&#26223; / &#36681;&#36600;&#21312;</span>
+            <span role="cell">\assets\resources\basegame\image\background</span>
+            <span role="cell">base_001.png<br>reels_001.png<br>base_reels_bg.png<br>base_reels_frame.png<br>reels_mask.png</span>
+            <span role="cell">&#21205;&#30059;&#20809;&#25928;&#21487;&#21478;&#20986;&#22294;</span>
+          </button>
+          <button class="spec-row spec-text" type="button" data-preset="ways_text" role="row">
+            <span role="cell">&#20027;&#36938;&#25138;</span>
+            <span role="cell">&#36335;&#25976;&#25991;&#26696;</span>
+            <span role="cell">\assets\resources\language\(lang)\basegame\image\background</span>
+            <span role="cell">ways_text_ways.png</span>
+            <span role="cell">&#34253;&#33394; language&#65307;&#27284;&#21517;&#21547; text</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="ways_nu" role="row">
+            <span role="cell">&#20027;&#36938;&#25138;</span>
+            <span role="cell">&#36335;&#25976;&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\basegame\font\multiplier</span>
+            <span role="cell">ways_nu_000~009.png<br>base_multiplier_*.png</span>
+            <span role="cell">&#25976;&#23383; 0~9</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="base_count" role="row">
+            <span role="cell">&#20027;&#36938;&#25138;</span>
+            <span role="cell">&#30436;&#38754;&#36111;&#20998;&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\basegame\font\background</span>
+            <span role="cell">base_count_nu_000~009.png<br>base_count_nu_comma.png<br>base_count_nu_dot.png<br>base_count_nu_plus.png<br>base_count_nu_minus.png<br>base_count_nu_x.png<br>base_count_nu_k.png<br>base_count_nu_m.png</span>
+            <span role="cell">&#25976;&#23383;&#23610;&#23544;&#30456;&#21516;&#65307;&#24163;&#21029;&#31526;&#34399;&#20381;&#38656;&#27714;</span>
+          </button>
+          <button class="spec-row spec-base" type="button" data-preset="marquee_mask" role="row">
+            <span role="cell">&#36305;&#39340;&#29128;</span>
+            <span role="cell">&#36305;&#39340;&#29128;&#36974;&#32617; / &#24213;&#22294;</span>
+            <span role="cell">\assets\resources\basegame\image\marquee</span>
+            <span role="cell">marquee_mask.png<br>marquee_frame.png</span>
+            <span role="cell">&#36974;&#32617;&#65306;&#36879;&#26126;&#24213;&#30333;&#33394;&#31684;&#22285;</span>
+          </button>
+          <button class="spec-row spec-text" type="button" data-preset="marquee_text" role="row">
+            <span role="cell">&#36305;&#39340;&#29128;</span>
+            <span role="cell">&#36305;&#39340;&#29128;&#25991;&#26696;</span>
+            <span role="cell">\assets\resources\language\(lang)\basegame\image\marquee</span>
+            <span role="cell">marquee_text_001~008.png</span>
+            <span role="cell">&#20381;&#35442;&#27454;&#25991;&#26696;&#25976;&#37327;</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="marquee_nu" role="row">
+            <span role="cell">&#36305;&#39340;&#29128;</span>
+            <span role="cell">&#36305;&#39340;&#29128;&#36111;&#20998;&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\basegame\font\marquee</span>
+            <span role="cell">marquee_nu_000~009.png<br>marquee_nu_comma.png<br>marquee_nu_dot.png<br>marquee_nu_plus.png<br>marquee_nu_minus.png<br>marquee_nu_x.png<br>marquee_nu_k.png<br>marquee_nu_m.png</span>
+            <span role="cell">&#23610;&#23544;&#30456;&#21516;&#65307;&#23532;&#24230;&#35009;&#26368;&#23567;</span>
+          </button>
+          <button class="spec-row spec-text" type="button" data-preset="intro_text" role="row">
+            <span role="cell">&#36681;&#22580;</span>
+            <span role="cell">&#36681;&#22580;&#25991;&#26696; / &#25353;&#37397;</span>
+            <span role="cell">\assets\resources\language\(lang)\basegame\image\freegame_intro</span>
+            <span role="cell">intro_text_001.png<br>intro_text_002.png<br>btn_intro_text_start.png</span>
+            <span role="cell">&#20813;&#36027;&#36938;&#25138;&#36681;&#22580;</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="intro_nu" role="row">
+            <span role="cell">&#36681;&#22580;</span>
+            <span role="cell">&#36681;&#22580;&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\basegame\font\freegame_intro</span>
+            <span role="cell">intro_nu_000~009.png<br>autostart_nu_000~009.png</span>
+            <span role="cell">&#33258;&#21205;&#38283;&#22987;&#25976;&#23383;&#21516;&#27169;&#32068;</span>
+          </button>
+          <button class="spec-row spec-text" type="button" data-preset="totalwin_text" role="row">
+            <span role="cell">&#29518;&#38917;</span>
+            <span role="cell">&#32080;&#31639;&#27161;&#38988;</span>
+            <span role="cell">\assets\resources\language\(lang)\basegame\image\totalwin</span>
+            <span role="cell">totalwin_text_totalwin.png</span>
+            <span role="cell">&#21487;&#33287;&#36092;&#36023;&#29305;&#33394;&#27171;&#24335;&#20849;&#29992;</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="totalwin_nu" role="row">
+            <span role="cell">&#29518;&#38917;</span>
+            <span role="cell">&#32080;&#31639;&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\basegame\font\totalwin</span>
+            <span role="cell">totalwin_nu_000~009.png<br>totalwin_nu_comma.png<br>totalwin_nu_dot.png<br>totalwin_nu_plus.png<br>totalwin_nu_minus.png<br>totalwin_nu_x.png<br>totalwin_nu_k.png<br>totalwin_nu_m.png</span>
+            <span role="cell">&#26410;&#33287; bigwin/maxwin &#20849;&#29992;&#26178;&#20351;&#29992;</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="win_nu" role="row">
+            <span role="cell">&#29518;&#38917;</span>
+            <span role="cell">&#22235;&#23652;&#22823;&#29518; / MAX &#20849;&#29992;&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\basegame\font\bigwin_maxwin_totalwin</span>
+            <span role="cell">win_nu_000~009.png<br>win_nu_comma.png<br>win_nu_dot.png<br>win_nu_plus.png<br>win_nu_minus.png<br>win_nu_x.png<br>win_nu_k.png<br>win_nu_m.png</span>
+            <span role="cell">&#20849;&#29992;&#25976;&#23383;&#27169;&#32068;</span>
+          </button>
+          <button class="spec-row spec-text" type="button" data-preset="maxwin_text" role="row">
+            <span role="cell">&#29518;&#38917;</span>
+            <span role="cell">MAX &#22823;&#29518;&#27161;&#38988; / &#25353;&#37397;</span>
+            <span role="cell">\assets\resources\language\(lang)\basegame\image\maxwin</span>
+            <span role="cell">maxwin_text_maxwin.png<br>btn_maxwin_text_winning.png</span>
+            <span role="cell">&#25991;&#26696;&#20197;&#35215;&#26684;&#26360;&#28858;&#20027;</span>
+          </button>
+          <button class="spec-row spec-text" type="button" data-preset="buyfeature_lang" role="row">
+            <span role="cell">&#36092;&#36023;&#29305;&#33394;</span>
+            <span role="cell">&#25353;&#37397; / &#24213;&#26495;&#25991;&#26696;</span>
+            <span role="cell">\assets\resources\language\(lang)\basegame\image\buyfeature</span>
+            <span role="cell">btn_buyfeature_text_001.png<br>buyfeature_text_001.png<br>btn_buyfeature_text_002.png<br>btn_buyfeature_text_003.png</span>
+            <span role="cell">&#22810;&#22283;&#35486;&#31995;&#36039;&#28304;</span>
+          </button>
+          <button class="spec-row spec-base" type="button" data-preset="buyfeature_img" role="row">
+            <span role="cell">&#36092;&#36023;&#29305;&#33394;</span>
+            <span role="cell">&#36984;&#21462;&#26694; / &#25353;&#37397;</span>
+            <span role="cell">\assets\resources\basegame\image\buyfeature</span>
+            <span role="cell">buyfeature_img_sel.png<br>buyfeature_img_sel_002.png<br>btn_buyfeature_minus.png<br>btn_buyfeature_plus.png<br>btn_buyfeature_confirm.png<br>btn_buyfeature_cancel.png</span>
+            <span role="cell">&#38750;&#35486;&#31995;&#22294;&#29255;</span>
+          </button>
+          <button class="spec-row spec-text" type="button" data-preset="freetimes_text" role="row">
+            <span role="cell">&#20813;&#36027;&#36938;&#25138;</span>
+            <span role="cell">&#22580;&#27425;&#25991;&#23383;</span>
+            <span role="cell">\assets\resources\language\(lang)\freegame\image\freetimes</span>
+            <span role="cell">freetimes_text_freegame.png<br>freetimes_text_maxspin.png</span>
+            <span role="cell">&#25976;&#23383;&#12289;&#25991;&#23383;&#21516;&#39080;&#26684;</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="freetimes_nu" role="row">
+            <span role="cell">&#20813;&#36027;&#36938;&#25138;</span>
+            <span role="cell">&#22580;&#27425;&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\freegame\font\freetimes</span>
+            <span role="cell">freetimes_nu_000~009.png<br>freetimes_nu_of.png</span>
+            <span role="cell">&#21516;&#39640;&#24230;&#65307;&#23532;&#24230;&#35009;&#26368;&#23567;</span>
+          </button>
+          <button class="spec-row spec-text" type="button" data-preset="retrigger_text" role="row">
+            <span role="cell">&#20813;&#36027;&#36938;&#25138;&#21152;&#23616;</span>
+            <span role="cell">&#21152;&#23616;&#25991;&#23383;</span>
+            <span role="cell">\assets\resources\language\(lang)\freegame\image\retrigger</span>
+            <span role="cell">retrigger_text_freegame.png</span>
+            <span role="cell">&#21152;&#23616;&#30059;&#38754;&#25991;&#26696;</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="retrigger_nu" role="row">
+            <span role="cell">&#20813;&#36027;&#36938;&#25138;&#21152;&#23616;</span>
+            <span role="cell">&#21152;&#23616;&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\freegame\font\retrigger</span>
+            <span role="cell">retrigger_nu_000~010.png</span>
+            <span role="cell">&#20381;&#21152;&#23616;&#25976;&#37327;</span>
+          </button>
+          <button class="spec-row spec-base" type="button" data-preset="ui_spin" role="row">
+            <span role="cell">UI</span>
+            <span role="cell">SPIN &#25353;&#37397;</span>
+            <span role="cell">\assets\resources\basegame\image\ui</span>
+            <span role="cell">btn_001.png<br>btn_img_001.png</span>
+            <span role="cell">spin &#31661;&#38957;&#21487;&#21205;&#24907;&#20986;&#22294;</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="ui_btn_nu" role="row">
+            <span role="cell">UI</span>
+            <span role="cell">&#33258;&#21205;&#26059;&#36681;&#27425;&#25976;</span>
+            <span role="cell">\assets\resources\basegame\font\ui</span>
+            <span role="cell">btn_nu_000~009.png</span>
+            <span role="cell">UI &#25976;&#23383;</span>
+          </button>
+          <button class="spec-row spec-base" type="button" data-preset="ui_common" role="row">
+            <span role="cell">UI</span>
+            <span role="cell">UI &#38748;&#24907;&#20844;&#29256;</span>
+            <span role="cell">\assets\resources\basegame\image\ui</span>
+            <span role="cell">info_001.png<br>btn_002~018.png</span>
+            <span role="cell">control_panel / &#20844;&#29256;&#25353;&#37397;</span>
+          </button>
+          <button class="spec-row spec-font" type="button" data-preset="info_nu" role="row">
+            <span role="cell">UI</span>
+            <span role="cell">&#36039;&#35338;&#21312;&#37329;&#38989;&#25976;&#23383;</span>
+            <span role="cell">\assets\resources\basegame\font\ui</span>
+            <span role="cell">info_nu_000~009.png<br>info_nu_comma.png<br>info_nu_dot.png<br>info_nu_plus.png<br>info_nu_minus.png<br>info_nu_x.png<br>info_nu_k.png<br>info_nu_m.png</span>
+            <span role="cell">&#21547;&#24163;&#21029;&#31526;&#34399;</span>
+          </button>
+          <button class="spec-row spec-base" type="button" data-preset="loading" role="row">
+            <span role="cell">&#19978;&#32218;&#30456;&#38364;</span>
+            <span role="cell">&#21069;&#23566;&#38913; / loading</span>
+            <span role="cell">\assets\texture\loading\image</span>
+            <span role="cell">pc_img_001.jpg<br>pc_shadow.png<br>loading_bar.png<br>loading_bar_bg.png<br>loading_btn_001.png<br>loading_btn_002.png<br>loading_btn_start.png<br>loading_dot_001.png<br>loading_icon.png<br>loading_img_bg.jpg</span>
+            <span role="cell">&#21069;&#23566;&#38913;&#20844;&#29256;&#36039;&#28304;</span>
+          </button>
+          <button class="spec-row spec-text" type="button" data-preset="loading_lang" role="row">
+            <span role="cell">&#19978;&#32218;&#30456;&#38364;</span>
+            <span role="cell">&#21069;&#23566;&#38913;&#22810;&#22283;</span>
+            <span role="cell">\assets\resources\language\(lang)\loading\image</span>
+            <span role="cell">loading_img_001.png<br>loading_carousel_img_001~003.png<br>hyperspeed_text_logo_(project).png</span>
+            <span role="cell">&#38656;&#35486;&#31995;&#21312;&#20998;</span>
+          </button>
+          <button class="spec-row spec-backend" type="button" data-preset="backend_symbol" role="row">
+            <span role="cell">&#24460;&#21488;&#22294;</span>
+            <span role="cell">Symbol &#22294;&#27161;</span>
+            <span role="cell">\backend\(project)\en</span>
+            <span role="cell">0~14.png</span>
+            <span role="cell">&#20381;&#35215;&#26684;&#26360; ID&#65307;&#23610;&#23544; 100x100 &#20493;&#25976;</span>
+          </button>
+          <button class="spec-row spec-backend" type="button" data-preset="backend_bg_frame" role="row">
+            <span role="cell">&#24460;&#21488;&#22294;</span>
+            <span role="cell">Symbol &#24213;&#26495; / &#37329;&#26694;</span>
+            <span role="cell">\backend\(project)\en\bg<br>\backend\(project)\en\frame</span>
+            <span role="cell">0.png<br>0x1.png<br>0x2.png<br>0x3.png</span>
+            <span role="cell">Megaways &#21487;&#24118;&#38263;&#24230;&#65306;{id}x{length}.png</span>
+          </button>
+          <button class="spec-row spec-backend" type="button" data-preset="backend_logo" role="row">
+            <span role="cell">&#24460;&#21488;&#22294;</span>
+            <span role="cell">Icon / Logo</span>
+            <span role="cell">\backend / market logo</span>
+            <span role="cell">11005_en.png<br>11005_340x340_en.png<br>11005_1024x1024_en.png<br>11001_en.png</span>
+            <span role="cell">&#36938;&#25138;&#32232;&#34399;_&#35486;&#31995;.png</span>
+          </button>
+        </div>
+        </section>
+      </section>
+
+      <form class="builder-form" id="nameForm">
+        <section class="command-row" aria-label="pattern">
+          <label class="main-input">
+            <span>Pattern</span>
+            <input id="patternInput" name="pattern" type="text" value="{func}_{prefix}_{type}_{name}_{state}_{num}_{version}{ext}" spellcheck="false">
+          </label>
+          <button class="secondary" id="sampleBtn" type="button">&#31684;&#20363;</button>
+          <select id="caseInput" name="caseMode" aria-label="case mode">
+            <option value="lower" selected>LOW</option>
+            <option value="upper">UP</option>
+            <option value="camel">CAM</option>
+            <option value="pascal">PAS</option>
+            <option value="original">ORG</option>
+          </select>
+          <select id="separatorInput" name="separator" aria-label="separator">
+            <option value="_" selected>_</option>
+            <option value="-">-</option>
+            <option value=".">.</option>
+            <option value="">none</option>
+          </select>
+          <button class="primary" type="submit">&#38283;&#22987;&#29983;&#25104;</button>
+        </section>
+
+        <section class="panel composer" aria-label="config">
+        <div class="section-head">
+            <h2>&#21629;&#21517;&#21443;&#25976;</h2>
+            <span>CONFIG</span>
+          </div>
+
+          <div class="field-grid">
+            <label>
+              <span>Function</span>
+              <select id="functionInput" name="functionName">
+                <option class="function-option-none" value="">none</option>
+                <option value="btn">btn</option>
+              </select>
+            </label>
+            <label>
+              <span>Prefix</span>
+              <input id="prefixInput" name="prefix" type="text" value="slot" list="prefixList" autocomplete="off">
+              <datalist id="prefixList"></datalist>
+            </label>
+            <label>
+              <span>Type</span>
+              <input id="typeInput" name="type" type="text" list="typeList" autocomplete="off">
+              <datalist id="typeList">
+                <option value="btn"></option>
+                <option value="bg"></option>
+                <option value="icon"></option>
+                <option value="panel"></option>
+                <option value="image"></option>
+                <option value="font"></option>
+                <option value="multiplier"></option>
+                <option value="text"></option>
+                <option value="nu"></option>
+                <option value="spine"></option>
+                <option value="anim"></option>
+                <option value="sfx"></option>
+                <option value="fx"></option>
+                <option value="tex"></option>
+              </datalist>
+            </label>
+            <label>
+              <span>Name</span>
+              <input id="nameInput" name="baseName" type="text" value="wild symbol" list="namePrefixList" autocomplete="off">
+              <datalist id="namePrefixList"></datalist>
+            </label>
+            <label>
+              <span>Font</span>
+              <select id="fontInput" name="fontSeries">
+                <option class="font-option-none" value="">none</option>
+                <option class="font-option-nu" value="multiplier">nu(&#20493;&#25976;)</option>
+                <option class="font-option-nu" value="score">nu(&#20998;&#25976;)</option>
+                <option class="font-option-text" value="text">text</option>
+              </select>
+            </label>
+            <label>
+              <span>State abc</span>
+              <input id="stateInput" name="state" type="text" value="idle" autocomplete="off">
+            </label>
+            <label>
+              <span>No.</span>
+              <select id="numberInput" name="number">
+                <option class="number-option-none" value="none">none</option>
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </label>
+            <label>
+              <span>Version</span>
+              <input id="versionInput" name="version" type="text" value="v01" autocomplete="off">
+            </label>
+            <label>
+              <span>Ext</span>
+              <select id="extensionInput" name="extension">
+                <option value="">none</option>
+                <option value=".png" selected>.png</option>
+                <option value=".jpg">.jpg</option>
+                <option value=".json">.json</option>
+                <option value=".atlas">.atlas</option>
+                <option value=".skel">.skel</option>
+                <option value=".prefab">.prefab</option>
+                <option value=".mp3">.mp3</option>
+                <option value=".wav">.wav</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="switches">
+            <label class="check">
+              <input id="padInput" type="checkbox" checked>
+              <span>&#24207;&#34399;&#35036;&#38646;</span>
+            </label>
+            <label class="check">
+              <input id="asciiInput" type="checkbox" checked>
+              <span>&#27284;&#21517;&#23433;&#20840;</span>
+            </label>
+            <label class="check">
+              <input id="dateInput" type="checkbox">
+              <span>&#21152;&#20837;&#26085;&#26399;</span>
+            </label>
+          </div>
+
+          <label class="batch count-field">
+            <span>&#25209;&#27425;&#25976;&#37327;</span>
+            <input id="batchInput" name="batchCount" type="number" min="1" value="1">
+          </label>
+        </section>
+      </form>
+
+      <section class="recent-strip" aria-label="status">
+        <div class="recent-meta">
+          <span>&#26368;&#36817;&#29983;&#25104;</span>
+          <strong id="resultCount">0</strong>
+        </div>
+        <p id="statusText">READY</p>
+      </section>
+
+      <section class="workspace" aria-label="naming workspace">
+        <section class="panel output-panel" aria-label="results">
+        <div class="section-head">
+            <h2>&#29983;&#25104;&#32080;&#26524;</h2>
+            <div class="head-actions">
+              <button class="ghost" id="copyResultsBtn" type="button">COPY ALL</button>
+              <span>.names</span>
+            </div>
+          </div>
+          <div class="results" id="resultList" aria-live="polite"></div>
+        </section>
+
+        <aside class="side-column">
+          <section class="panel history-panel" aria-label="history">
+        <div class="section-head">
+              <h2>&#26368;&#36817;</h2>
+              <button class="ghost" id="clearHistoryBtn" type="button">&#28165;&#38500;</button>
+            </div>
+            <div class="history-list" id="historyList"></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <template id="resultRowTemplate">
+      <article class="result-row">
+        <code></code>
+        <button class="copy-one" type="button">COPY</button>
+      </article>
+    </template>
+
+    <script src="./app.js?v=20260702-final-folder1"></script>
+  </body>
+</html>
