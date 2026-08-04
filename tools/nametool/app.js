@@ -4,7 +4,7 @@
   const historyKey = "name-tool-history-v3";
   const maxHistory = 40;
   const currency = ["$", "G", "S", "C", "\u00a5", "\u20a9", "\u20ab", "\u0e3f", "R", "p", "\u09f3", "\u20ba", "\u20ac", "\u20bd"];
-  const defaultPattern = "{func}_{prefix}_{type}_{name}_{state}_{num}_{version}{ext}";
+  const defaultPattern = "{func}_{prefix}_{type}_{font}_{state}_{num}_{name}_{version}{ext}";
   const fontSeries = {
     multiplier: [...numberSuffixes(0, 9, 3), "x"],
     score: [...numberSuffixes(0, 9, 3), ...coreSigns(), ...currency]
@@ -425,7 +425,7 @@
     els.extension.value = selected.extension;
     els.pattern.value = defaultPattern;
     els.batch.value = String(Math.max(serialCount, 1));
-    els.name.value = getDisplayName(parts.name || (parts.functionName ? "" : extractNamePrefix(selected.batch[0] || "") || selected.batch[0] || ""), els.font.value);
+    els.name.value = getDisplayName(parts.name || (els.font.value ? "" : (parts.functionName ? "" : extractNamePrefix(selected.batch[0] || "") || selected.batch[0] || "")), els.font.value);
     els.caseMode.value = "lower";
     els.separator.value = "_";
     els.pad.checked = shouldPadSerial(groupNames);
@@ -571,6 +571,32 @@
       functionName = parts.shift();
     }
 
+    const fontIndex = parts.findIndex(isFontNamePart);
+
+    if (fontIndex >= 0) {
+      const beforeFont = parts.slice(0, fontIndex);
+      const afterFont = parts.slice(fontIndex + 1);
+      const fontPart = parts[fontIndex];
+      const prefixPart = beforeFont[0] || "";
+      const typePart = beforeFont.slice(1).join("_");
+      let name = "";
+      let state = "";
+
+      if (fontPart === "text") {
+        name = afterFont.length ? afterFont[afterFont.length - 1] : "";
+        state = afterFont.length > 1 ? afterFont.slice(0, -1).join("_") : "";
+      } else if (afterFont.length === 1 && /^[a-z]+$/i.test(afterFont[0]) && !coreSigns().includes(afterFont[0].toLowerCase())) {
+        state = afterFont[0];
+      } else if (afterFont.length > 1) {
+        state = /^[a-z]+$/i.test(afterFont[0]) ? afterFont[0] : "";
+        name = state ? afterFont.slice(1).join("_") : afterFont.join("_");
+      } else {
+        name = afterFont[0] || "";
+      }
+
+      return { functionName, prefix: prefixPart, type: typePart, name, state };
+    }
+
     if (parts.length >= 4) {
       return { functionName, prefix: parts[0], type: parts[1], name: parts[2], state: parts.slice(3).join("_") };
     }
@@ -596,6 +622,11 @@
     }
 
     return { functionName, prefix: "", type: "", name: parts[0] || prefix, state: "" };
+  }
+
+  function isFontNamePart(part) {
+    const text = String(part || "").toLowerCase();
+    return text === "text" || text === "nu";
   }
 
   function findSerialStart(names) {
@@ -674,7 +705,7 @@
 
   function isUsefulNameOption(name) {
     const text = String(name || "").trim();
-    const skipped = new Set([...coreSigns(), ...currency]);
+    const skipped = new Set(["text", "nu", ...coreSigns(), ...currency]);
 
     return !!text && !text.includes("_") && !/^\d+$/.test(text) && !skipped.has(text);
   }
@@ -986,7 +1017,8 @@
     const number = config.number + index;
     const numberText = config.numberDisabled ? "" : (numberOverride == null ? (config.padNumber ? String(number).padStart(3, "0") : String(number)) : numberOverride);
     const dateText = config.includeDate ? makeDateText() : "";
-    const effectiveName = rawName || config.name || getFontDefaultName(config.fontSeries);
+    const effectiveName = rawName || config.name || "";
+    const fontPatternValue = getFontPatternValue(config.fontSeries);
 
     return {
       prefix: config.prefix,
@@ -994,7 +1026,8 @@
       function: config.functionName,
       type: config.type,
       name: effectiveName,
-      font: config.fontSeries,
+      font: fontPatternValue,
+      fontSeries: config.fontSeries,
       state: stateOverride == null ? config.state : stateOverride,
       num: numberText,
       number: numberText,
@@ -1002,6 +1035,10 @@
       date: dateText,
       ext: config.extension
     };
+  }
+
+  function getFontPatternValue(series) {
+    return getFontDefaultName(series) || series || "";
   }
 
   function compilePattern(pattern, tokenMap, config) {

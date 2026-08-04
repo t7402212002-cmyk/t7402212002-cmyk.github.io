@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>&#21629;&#21517;&#24037;&#20855; v1.0</title>
-    <link rel="stylesheet" href="./styles.css?v=20260702-final-folder1">
+    <link rel="stylesheet" href="./styles.css?v=20260730-pattern-short-controls-wide2">
+	
   </head>
   <body>
     <main class="app-window">
@@ -287,7 +288,7 @@
         <section class="command-row" aria-label="pattern">
           <label class="main-input">
             <span>Pattern</span>
-            <input id="patternInput" name="pattern" type="text" value="{func}_{prefix}_{type}_{name}_{state}_{num}_{version}{ext}" spellcheck="false">
+            <input id="patternInput" name="pattern" type="text" value="{func}_{prefix}_{type}_{font}_{state}_{num}_{name}_{version}{ext}" spellcheck="false">
           </label>
           <button class="secondary" id="sampleBtn" type="button">&#31684;&#20363;</button>
           <select id="caseInput" name="caseMode" aria-label="case mode">
@@ -346,11 +347,6 @@
               </datalist>
             </label>
             <label>
-              <span>Name</span>
-              <input id="nameInput" name="baseName" type="text" value="wild symbol" list="namePrefixList" autocomplete="off">
-              <datalist id="namePrefixList"></datalist>
-            </label>
-            <label>
               <span>Font</span>
               <select id="fontInput" name="fontSeries">
                 <option class="font-option-none" value="">none</option>
@@ -379,6 +375,11 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
               </select>
+            </label>
+            <label>
+              <span>Name</span>
+              <input id="nameInput" name="baseName" type="text" value="wild symbol" list="namePrefixList" autocomplete="off">
+              <datalist id="namePrefixList"></datalist>
             </label>
             <label>
               <span>Version</span>

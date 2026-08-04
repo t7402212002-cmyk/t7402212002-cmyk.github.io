@@ -50,7 +50,7 @@ button {
 
 .app-window {
   position: relative;
-  width: min(1180px, calc(100vw - 24px));
+  width: min(1520px, calc(100vw - 24px));
   min-height: auto;
   margin: 12px auto;
   overflow: visible;
@@ -316,7 +316,7 @@ button.spec-row.active {
 
 .command-row {
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) 76px 58px 50px 140px;
+  grid-template-columns: minmax(320px, 1fr) 160px 96px 96px 140px;
   gap: 8px;
   align-items: end;
   padding: 16px 24px;
@@ -359,6 +359,23 @@ input,
 select {
   height: 50px;
   padding: 0 14px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 28px;
+  background-color: #121922;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #9fb0c4 50%),
+    linear-gradient(135deg, #9fb0c4 50%, transparent 50%),
+    linear-gradient(to bottom, transparent 8px, #334153 8px, #334153 calc(100% - 8px), transparent calc(100% - 8px));
+  background-position:
+    calc(100% - 14px) calc(50% - 1px),
+    calc(100% - 9px) calc(50% - 1px),
+    calc(100% - 24px) 50%;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px, 1px 100%;
 }
 
 .command-row input,
@@ -525,7 +542,7 @@ textarea:focus {
 .composer {
   order: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.36fr);
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 0.18fr);
   grid-template-rows: auto auto auto;
   border-right: 0;
   border-bottom: 1px solid var(--line-soft);
@@ -550,6 +567,14 @@ textarea:focus {
 .field-grid select {
   height: 38px;
   padding: 0 10px;
+}
+
+.field-grid select {
+  padding-right: 24px;
+  background-position:
+    calc(100% - 12px) calc(50% - 1px),
+    calc(100% - 7px) calc(50% - 1px),
+    calc(100% - 20px) 50%;
 }
 
 .switches {
@@ -588,7 +613,7 @@ textarea:focus {
 }
 
 .count-field input {
-  min-height: 118px;
+  min-height: 96px;
   font-size: 28px;
   font-family: var(--mono);
   font-weight: 800;
